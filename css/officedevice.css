@@ -1,0 +1,114 @@
+#mainContent {
+	width: 100%;
+	height: 800px;
+	background: #E9E9E9;
+	border-top: 1px solid lightgray;
+	border-bottom: 1px solid lightgray;
+}
+
+#mainContent #deviceWraper {
+	background: #fff;
+	height: 760px;
+	margin-top: 20px;
+	padding: 0px;
+}
+
+#deviceWraper #selectArea {
+	height: 110px;
+	line-height: 110px;
+	margin: 0px;
+	padding: 0px;
+	text-align: center;
+}
+
+#selectArea #selectForm {
+	height: 100px;
+	padding-left: 80px;
+}
+
+#selectArea .form-group {
+	margin-left: 10px;
+}
+
+#selectArea input[type=text] {
+	width: 100px;
+	height: 40px;
+}
+
+#selectArea input[type=date] {
+	width: 140px;
+	height: 40px;
+}
+
+#selectArea button {
+	width: 80px;
+	height: 40px;
+	position: relative;
+	top: -2px;
+	margin-left: 20px;
+}
+
+#selectArea #export {
+	height: 100px;
+	text-align: center;
+}
+
+#mainContent #deviceMessage {
+	height: 560px;
+	border: 1px solid lightgray;
+}
+
+#mainContent #pageArea {
+	height: 80px;
+	text-align: center;
+}
+
+#pageArea li a {
+	width: 45px;
+	height: 40px;
+}
+
+@media (min-width:768px) and (max-width:991px) {
+	#selectArea #export {
+		text-align: left;
+		padding-left: 0px;
+	}
+	#selectArea #selectForm {
+		text-align: left;
+		padding-left: 0px;
+	}
+	#selectArea input[type=text] {
+		width: 80px;
+	}
+	#selectArea input[type=date] {
+		width: 140px;
+	}
+}
+
+@media (max-width:767px) {
+	#mainContent #deviceWraper {
+		height: 800px;
+	}
+	#selectForm .form-group {
+		float: left;
+	}
+	#selectForm input,
+	#selectForm label {
+		float: left;
+	}
+	#selectForm input {
+		margin-left: 10px;
+		margin-top: 33px;
+	}
+	#selectForm div:nth-child(2) {
+		width: 150px;
+		margin-left: -50px;
+	}
+	#selectForm div:nth-child(4) {
+		width: 80px;
+	}
+	#mainContent #pageArea {
+		height: 120px;
+		text-align: center;
+	}
+}

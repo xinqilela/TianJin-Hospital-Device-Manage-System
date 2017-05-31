@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="userApp">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>科室管理</title>
+	<link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/managerLogoNav.css" />
+	<link rel="stylesheet" href="css/managerFooter.css" />
+	<link rel="stylesheet" href="css/deptlist.css" />
+	<script src="js/angular.js"></script>
+	<script src="js/user.js"></script>
+</head>
+
+<body ng-controller="officeControler">
+	<!--loginNav start-->
+	<div manager_nav></div>
+	<!--loginNav end-->
+	<div class="container">
+		<div class="row">
+			<!--mainContent start-->
+			<div id="mainContent">
+				<div id="selectArea" class="col-md-12  col-sm-12 col-xs-12">
+					<!--条件查询开始-->
+					<form method="post" class="form-inline col-md-8 col-md-offset-1 col-sm-8 col-xs-12" id="selectForm">
+						<div class="form-group hidden-xs">
+							<label>编号:</label>
+							<input type="text" class="form-control" />
+						</div>
+						<div class="form-group">
+							<label>名称:</label>
+							<input type="text" class="form-control" />
+						</div>
+						<div class="form-group">
+							<button type="submit" class="btn btn-default">查询</button>
+						</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					</form>
+					<!--条件查询结束-->
+					<!--导出所有科室 start-->
+					<div id="exportWraper" class="col-md-2 col-sm-2 hidden-xs">
+						<i class="glyphicon glyphicon-export"></i>&nbsp;<a href="">导出科室</a>
+					</div>
+					<!--导出所有科室 end-->
+					<div id="insertwraper" class="col-md-1 col-sm-2 hidden-xs" ng-if="1==1">
+						<button id="insert" type="button" data-toggle="modal" data-target="#addModal">
+								<i class="glyphicon glyphicon-plus"></i>&nbsp;新增
+						</button>
+						<!--新增模态框 start-->
+						<div class="modal fade" id="addModal" tabindex="-1">
+							<div class="modal-dialog">
+								<div class="modal-content col-md-10 col-sm-10">
+									<div class="modal-header" id="modalTitle">
+										增加科室信息
+									</div>
+									<div class="modal-body">
+										<form class="form-inline">
+											<div class="form-group">
+												<label class="col-md-3 col-sm-4 control-label">编号:</label>
+												<div class="col-md-7 col-sm-7">
+													<input type="text" class="form-control" />
+												</div>
+											</div>
+											<div class="form-group">
+												<label class="col-md-3 col-sm-4 control-label ">名称:</label>
+												<div class="col-md-7 col-sm-7">
+													<input type="text" class="form-control" />
+												</div>
+											</div>
+											<div class="form-group">
+												<label class="col-md-3 col-sm-4 control-label">人数:</label>
+												<div class="col-md-7 col-sm-7">
+													<input type="number" class="form-control" />
+												</div>
+											</div>
+											<div class="form-group">
+												<label class="col-md-3 col-sm-4  control-label">电话:</label>
+												<div class="col-md-7 col-sm-7">
+													<input type="tel" class="form-control" />
+												</div>
+											</div>
+											<div class="form-group col-md-offset-2 col-sm-offset-2" id="addbtn">
+												<button type="reset" class="btn btn-default" data-dismiss="modal">取消</button>
+												<button type="submit" class="btn btn-primary">提交</button>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--新增模态框 end-->
+					</div>
+				</div>
+				<div id="officeTable" class="col-md-10 col-md-offset-1 table-responsive">
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th>编号</th>
+								<th>名称</th>
+								<th>人数</th>
+								<th>联系电话</th>
+								<th ng-if="1==1">操作</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="x in offices">
+								<td>{{x.id}}</td>
+								<td>{{x.name}}</td>
+								<td>{{x.number}}</td>
+								<td>{{x.phone}}</td>
+								<td ng-if="1==1">
+									<a href=""><i class="glyphicon glyphicon-trash"></i></a>&nbsp;&nbsp;&nbsp;
+									<a href="" data-target="#updateModal" data-toggle="modal"><i class="glyphicon glyphicon-edit"></i></a>
+									<div class="modal fade" id="updateModal" tabindex="-1">
+										<div class="modal-dialog">
+											<div class="modal-content">
+												<div class="modal-header">
+													编辑科室信息
+												</div>
+												<div class="modal-body">
+													<form class="form-horizontal">
+														<div class="form-group">
+															<label class="col-md-3 col-md-offset-1  col-sm-3  control-label">编号:</label>
+															<div class="col-md-7 col-sm-7">
+																<input type="text" class="form-control" />
+															</div>
+														</div>
+														<div class="form-group">
+															<label class="col-md-3 col-md-offset-1 col-sm-3 control-label ">名称:</label>
+															<div class="col-md-7 col-sm-7">
+																<input type="text" class="form-control" />
+															</div>
+														</div>
+														<div class="form-group">
+															<label class="col-md-3 col-md-offset-1 col-sm-3 control-label">人数:</label>
+															<div class="col-md-7 col-sm-7">
+																<input type="number" class="form-control" />
+															</div>
+														</div>
+														<div class="form-group">
+															<label class="col-md-3 col-md-offset-1 col-sm-3 control-label">电话:</label>
+															<div class="col-md-7 col-sm-7">
+																<input type="tel" class="form-control" />
+															</div>
+														</div>
+														<div class="form-group" id="addbtn">
+															<button type="reset" class="btn btn-default" data-dismiss="modal">取消</button>
+															<button type="submit" class="btn btn-primary">提交</button>
+														</div>
+													</form>
+												</div>
+											</div>
+										</div>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div id="pageArea" class="col-md-12">
+					<ul class="pagination">
+						<li><a href="">&laquo;</a></li>
+						<li ng-repeat="x in pages"><a href="">{{$index+1}}</a></li>
+						<li><a href="">&raquo;</a></li>
+					</ul>
+				</div>
+			</div>
+			<!--mainContent end-->
+		</div>
+	</div>
+	<!--footer start-->
+	<div manager_footer></div>
+	<!--footer end-->
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script>
+		setTimeout(function() {
+			var cur = $('header #ul li:eq(3)');
+			var resCur = $('#collapseOne ul li:eq(3)');
+			cur.addClass('active');
+			resCur.addClass('activeRes');
+		}, 200);
+	</script>
+</body>
+
+</html>

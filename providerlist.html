@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="userApp">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>供应商管理</title>
+	<link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/managerLogoNav.css" />
+	<link rel="stylesheet" href="css/managerFooter.css" />
+	<link rel="stylesheet" href="css/providelist.css" />
+	<script src="js/angular.js"></script>
+	<script src="js/user.js"></script>
+</head>
+
+<body ng-controller="providerControler">
+	<!--loginNav start-->
+	<div manager_nav></div>
+	<!--loginNav end-->
+	<div class="container">
+		<div class="row">
+			<!--mainContent start-->
+			<div id="mainContent">
+				<!--条件查询 start-->
+				<div id="selectArea" class="col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
+					<form method="post" class="form-inline col-md-8 col-sm-8 col-xs-12" id="selectform">
+						<div class="form-group hidden-xs">
+							<label>编号:</label>
+							<input type="text" class="form-control" />
+						</div>
+						<div class="form-group">
+							<label>名称:</label>
+							<input type="text" class="form-control" />
+						</div>
+						<div class="form-group">
+							<button type="submit" class="btn btn-default">查询</button>
+						</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					</form>
+					<div class="col-md-2 col-sm-2 hidden-xs" id="exportWraper">
+						<i class="glyphicon glyphicon-export"></i>
+						<a href="">导出供应商</a>
+					</div>
+					<div id="insertwraper" class="col-md-2 col-sm-2 hidden-xs">
+						<button id="insert" type="button" data-toggle="modal" data-target="#addModal">
+								<i class="glyphicon glyphicon-plus"></i>&nbsp;新增
+						</button>
+						<!--新增模态框 start-->
+						<div class="modal fade" id="addModal" tabindex="-1">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header" id="modalTitle">
+										增加供应商信息
+									</div>
+									<div class="modal-body">
+										<form class="form-horizontal">
+											<div class="form-group">
+												<label class="col-md-3 col-sm-3 col-md-offset-1 control-label">编号:</label>
+												<div class="col-md-7 col-sm-7">
+													<input type="text" class="form-control" />
+												</div>
+											</div>
+											<div class="form-group">
+												<label class="col-md-3 col-sm-3 col-md-offset-1 control-label ">名称:</label>
+												<div class="col-md-7 col-sm-7">
+													<input type="text" class="form-control" />
+												</div>
+											</div>
+											<div class="form-group">
+												<label class="col-md-3 col-sm-3 col-md-offset-1 control-label">营业执照编号:</label>
+												<div class="col-md-7 col-sm-7">
+													<input type="text" class="form-control" />
+												</div>
+											</div>
+											<div class="form-group">
+												<label class="col-md-3 col-sm-3 col-md-offset-1 control-label">经营许可证编号:</label>
+												<div class="col-md-7 col-sm-7">
+													<input type="text" class="form-control" />
+												</div>
+											</div>
+											<div class="form-group">
+												<label class="col-md-3 col-sm-3 col-md-offset-1 control-label">供应商资质图片:</label>
+												<div class="col-md-7 col-sm-7">
+													<input type="file" />
+												</div>
+											</div>
+											<div class="form-group" id="addbtn">
+												<button type="reset" class="btn btn-default" data-dismiss="modal">取消</button>
+												<button type="submit" class="btn btn-primary">提交</button>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--新增模态框 end-->
+					</div>
+				</div>
+				<!--条件查询 end-->
+				<!--数据展示 start-->
+				<div id="providerTable" class="col-md-10 col-md-offset-1 col-sm-12 table-responsive">
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th>编号</th>
+								<th>名称</th>
+								<th>营业执照编号</th>
+								<th>经营许可证编号</th>
+								<th>供应商资质图片</th>
+								<th>操作</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="x in providers">
+								<td>{{x.id}}</td>
+								<td>{{x.name}}</td>
+								<td>{{x.licensenum}}</td>
+								<td>{{x.businessnum}}</td>
+								<td>{{x.img}}</td>
+								<td>
+									<a href=""><i class="glyphicon glyphicon-trash"></i></a>&nbsp;&nbsp;&nbsp;
+									<a href="" data-target="#updateModal" data-toggle="modal"><i class="glyphicon glyphicon-edit"></i></a>
+									<!--修改模态框 start-->
+									<div class="modal fade" id="updateModal" tabindex="-1">
+										<div class="modal-dialog">
+											<div class="modal-content">
+												<div class="modal-header">
+													编辑供应商信息
+												</div>
+												<div class="modal-body">
+													<form class="form-horizontal">
+														<div class="form-group">
+															<label class="col-md-3 col-sm-3 col-md-offset-1 control-label">编号:</label>
+															<div class="col-md-7 col-sm-7">
+																<input type="text" class="form-control" />
+															</div>
+														</div>
+														<div class="form-group">
+															<label class="col-md-3 col-sm-3 col-md-offset-1 control-label ">名称:</label>
+															<div class="col-md-7 col-sm-7">
+																<input type="text" class="form-control" />
+															</div>
+														</div>
+														<div class="form-group">
+															<label class="col-md-3 col-sm-3 col-md-offset-1 control-label">营业执照编号:</label>
+															<div class="col-md-7 col-sm-7">
+																<input type="text" class="form-control" />
+															</div>
+														</div>
+														<div class="form-group">
+															<label class="col-md-3 col-sm-3 col-md-offset-1 control-label">经营许可证编号:</label>
+															<div class="col-md-7 col-sm-7">
+																<input type="text" class="form-control" />
+															</div>
+														</div>
+														<div class="form-group">
+															<label class="col-md-3 col-sm-3 col-md-offset-1 control-label">供应商资质图片:</label>
+															<div class="col-md-7 col-sm-7">
+																<input type="file" />
+															</div>
+														</div>
+														<div class="form-group" id="addbtn">
+															<button type="reset" class="btn btn-default" data-dismiss="modal">取消</button>
+															<button type="submit" class="btn btn-primary">提交</button>
+														</div>
+													</form>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!--修改模态框 end-->
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!--数据展示 end-->
+				<!--页码 start-->
+				<div id="pageArea" class="col-md-12 col-sm-12">
+					<ul class="pagination">
+						<li><a href="">&laquo;</a></li>
+						<li ng-repeat="x in pages"><a href="">{{$index+1}}</a></li>
+						<li><a href="">&raquo;</a></li>
+					</ul>
+				</div>
+				<!--页码 end-->
+			</div>
+			<!--mainContent end-->
+		</div>
+	</div>
+	<!--footer start-->
+	<div manager_footer></div>
+	<!--footer end-->
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script>
+		setTimeout(function() {
+			var cur = $('header #ul li:eq(4)');
+			var resCur = $('#collapseOne ul li:eq(4)');
+			cur.addClass('active');
+			resCur.addClass('activeRes');
+		}, 200);
+	</script>
+</body>
+
+</html>

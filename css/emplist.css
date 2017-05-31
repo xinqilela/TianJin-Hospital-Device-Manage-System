@@ -1,0 +1,164 @@
+body {
+	background: #E9E9E9;
+}
+
+#mainContent {
+	background: #fff;
+	height: 800px;
+	position: relative;
+}
+
+#insertwraper {
+	display: inline-block;
+	height: 88px;
+	margin-top: -12px;
+}
+
+#insert {
+	border-radius: 13px;
+	width: 95px;
+	height: 30px;
+	background: #4564A4;
+	border: 1px solid #015595;
+	color: #fff;
+	margin-left: 15px;
+	font-size: 14px;
+}
+
+#insert:hover {
+	background: #015595;
+	border: 1px solid #4564A4;
+}
+
+#insertwraper #exportWraper {
+	margin-top: 15px;
+	color: #015595;
+	padding-left: 10px;
+}
+
+#addbtn {
+	text-align: center;
+}
+
+#addbtn button {
+	width: 80px;
+	margin-left: 10px;
+}
+
+#mainContent #selectArea {
+	background: #fff;
+	height: 80px;
+	position: absolute;
+	top: 0px;
+	padding-top: 30px;
+	text-align: center;
+}
+
+#selectArea #selectform input[type=text] {
+	width: 130px;
+}
+
+#selectArea .form-group {
+	margin-left: 10px;
+}
+
+#selectArea button {
+	margin-left: 10px;
+}
+
+#modalTitle {
+	text-align: left;
+}
+
+#modalBtn1,
+#modalBtn2 {
+	background: red;
+}
+
+#mainContent #userTable {
+	height: 560px;
+	position: absolute;
+	border: 1px solid lightgray;
+	top: 100px;
+}
+
+#userTable table tr td {
+	text-align: center;
+	overflow: hidden;
+	text-align: justify;
+}
+
+#userTable tbody a {
+	color: #333333;
+	font-size: 13px;
+}
+
+#mainContent #pageArea {
+	height: 90px;
+	position: absolute;
+	bottom: 25px;
+	text-align: center;
+	padding-top: 5px;
+}
+
+#pageArea li a {
+	width: 45px;
+	height: 40px;
+}
+
+
+/*中小型屏幕*/
+
+@media (min-width:760px) and (max-width:1199px) {
+	#mainContent #selectArea {
+		height: 120px;
+		padding-top: 15px;
+	}
+	#selectform div:nth-child(4),
+	#selectform div:nth-child(5) {
+		margin-top: 20px;
+	}
+	#insertwraper {
+		margin-top: 0px;
+	}
+	#mainContent #userTable {
+		height: 560px;
+		border: 1px solid lightgray;
+		margin-top: 20px;
+	}
+}
+
+
+/*超小屏幕*/
+
+@media (max-width:767px) {
+	#mainContent #selectArea {
+		height: 100px;
+		line-height: 100px;
+	}
+	#selectArea #selectform {
+		height: inherit;
+		line-height: inherit;
+		position: absolute;
+		top: 0px;
+		left: 0px;
+	}
+	#selectform label {
+		float: left;
+		margin-left: 10px;
+	}
+	#selectform div:nth-child(2) {
+		height: 80px;
+		width: 180px;
+		float: left;
+	}
+	#selectform input[type=text] {
+		float: left;
+		margin-top: 35px;
+		margin-left: 10px;
+		width: 115px !important;
+	}
+	#selectform div:nth-child(5) {
+		float: left;
+	}
+}

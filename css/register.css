@@ -1,0 +1,88 @@
+#mainContent {
+	width: 100%;
+	height: 480px;
+	border-top: 1px solid lightgray;
+	border-bottom: 1px solid lightgray;
+}
+
+#mainContent #regisitForm {
+	height: 478px;
+	background: #fff;
+	padding-top: 40px;
+}
+
+#regisitForm .error {
+	color: red;
+	background: rgba(0, 0, 0, 0.7);
+	display: inline-block;
+	padding: 4px 8px 4px 8px;
+	margin-top: 5px;
+	border-radius: 5px;
+	color: #fff;
+	font-size: 14px;
+}
+
+#regisitForm .error:after {
+	display: inline-block;
+	content: "";
+	width: 10px;
+	height: 10px;
+	position: relative;
+	left: -70%;
+	top: -19px;
+	border-bottom: 5px solid rgba(0, 0, 0, 0.7);
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+}
+
+#regisitForm form {
+	margin-top: 10px;
+}
+
+#regisitForm .form-group {
+	margin-bottom: 15px;
+}
+
+#regisitForm input,
+#regisitForm button {
+	height: 42px;
+}
+
+#regisitForm #valid {
+	height: 42px;
+	display: inline-block;
+}
+
+#regisitForm .form-group:nth-child(4) {
+	position: relative;
+}
+
+#regisitForm button {
+	background: #00A0E8;
+	border: 1px solid #317EF3;
+	color: #fff;
+	font-size: 16px;
+}
+
+#regisitForm button:hover {
+	background: #436EEE;
+}
+
+#regisitForm #goLogin {
+	margin-top: 12px;
+	color: #436EEE;
+}
+
+#regisitForm i {
+	font-weight: bold;
+}
+
+#regisitForm #goLogin:hover {
+	color: #00A0E8;
+}
+
+@media (max-width:587px) {
+	#mainContent form div:nth-child(4) {
+		display: none;
+	}
+}

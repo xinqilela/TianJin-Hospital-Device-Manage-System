@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="userApp">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>本科室所有设备</title>
+	<link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/userLogoNav.css" />
+	<link rel="stylesheet" href="css/footer.css" />
+	<link rel="stylesheet" href="css/officedevice.css" />
+	<script src="js/angular.js"></script>
+	<script src="js/user.js"></script>
+</head>
+
+<body ng-controller="deviceControler">
+	<!--loginNav start-->
+	<div user_nav></div>
+	<!--loginNav end-->
+	<!--mainContent start-->
+	<div id="mainContent">
+		<div class="container">
+			<div class="row" id="deviceWraper">
+				<!--条件查询 start-->
+				<div id="selectArea" class="col-md-12 col-sm-12 col-xs-12">
+					<form class="form-inline col-md-9 col-sm-10 col-xs-12" id="selectForm">
+						<div class="form-group hidden-xs">
+							<label>编号:</label>
+							<input type="text" class="form-control" />
+						</div>
+						<div class="form-group">
+							<label>名称:</label>
+							<input type="text" class="form-control" />
+						</div>
+						<div class="form-group hidden-xs">
+							<label>检修时间:</label>
+							<input type="date" class="form-control" />
+						</div>
+						<div class="form-group">
+							<button type="submit" class="btn btn-primary">查询</button>
+						</div>
+					</form>
+					<div class="col-md-2 col-sm-2 hidden-xs" id="export">
+						<a href="">
+							<i class="glyphicon glyphicon-export"></i>导出所有设备
+						</a>
+					</div>
+				</div>
+				<!--条件查询 end-->
+				<!--设备信息 start-->
+				<div id="deviceMessage" class="col-md-10 col-sm-12 col-xs-12 col-md-offset-1 table-responsive">
+					<table class="table table-hover">
+						<thead>
+							<tr>
+								<th>编号</th>
+								<th>设备名</th>
+								<th>生产商</th>
+								<th>图片</th>
+								<th>生产日期</th>
+								<th>保质期</th>
+								<th>科室</th>
+								<th>检修时间</th>
+								<th>间隔时间</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="x in devices">
+								<td>{{x.id}}</td>
+								<td>{{x.name}}</td>
+								<td>{{x.provider}}</td>
+								<td>{{x.img}}</td>
+								<td>{{x.producedate}}</td>
+								<td>{{x.shelflife}}</td>
+								<td>{{x.office}}</td>
+								<td>{{x.repairtime}}</td>
+								<td>{{x.interval}}</td>
+							</tr>
+						</tbody>
+					</table>
+
+				</div>
+				<!--设备信息 end-->
+				<div id="pageArea" class="col-md-12 col-sm-12 col-xs-12">
+					<ul class="pagination">
+						<li><a href="">&laquo;</a></li>
+						<li ng-repeat="x in pages"><a href="">{{$index+1}}</a></li>
+						<li><a href="">&raquo;</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--mainContent end-->
+	<!--footer start-->
+	<div footer></div>
+	<!--footer end-->
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="userApp">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>设备管理</title>
+	<link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/managerLogoNav.css" />
+	<link rel="stylesheet" href="css/managerFooter.css" />
+	<link rel="stylesheet" href="css/devicelist.css" />
+	<script src="js/angular.js"></script>
+	<script src="js/user.js"></script>
+</head>
+
+<body ng-controller="deviceControler">
+	<!--loginNav start-->
+	<div manager_nav></div>
+	<!--loginNav end-->
+	<div class="container">
+		<div class="row">
+			<!--mainContent start-->
+			<div id="mainContent">
+				<a href="" id="chart1" class="col-md-3">
+					<i class="glyphicon glyphicon-hand-right"></i>&nbsp; 医疗设备图表
+				</a>
+				<a href="" id="chart2" class="col-md-3">
+					<i class="glyphicon glyphicon-hand-right"></i>&nbsp;报警设备图表
+				</a>
+				<div id="optionArea" class="col-md-5 col-sm-6 hidden-xs col-md-offset-7 col-sm-offset-6">
+					<button id="import" type="button">
+						<i class="glyphicon glyphicon-import"></i>
+							&nbsp;导入
+					</button>
+					<div class="dropdown" id="export">
+						<button type="button" class="dropdown-toggle" data-toggle="dropdown">
+							<i class="glyphicon glyphicon-export"></i>
+							&nbsp;导出
+							<span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu">
+							<li>
+								<a tabindex="-1" href="">全部导出</a>
+							</li>
+							<li>
+								<a tabindex="-1" href="">分科室导出</a>
+							</li>
+							<li>
+								<a tabindex="-1" href="">导出报警设备</a>
+							</li>
+						</ul>
+					</div>
+					<button id="insert" type="button" data-toggle="modal" data-target="#addModal">
+						<i class="glyphicon glyphicon-plus"></i>
+							&nbsp;新增
+					</button>
+					<!--新增模态框 start-->
+					<div class="modal fade" id="addModal" tabindex="-1">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									增加设备信息
+								</div>
+								<div class="modal-body">
+									<form class="form-horizontal">
+										<div class="form-group">
+											<label class="col-md-3 col-sm-3 control-label">编号:</label>
+											<div class="col-md-7 col-sm-7">
+												<input type="text" class="form-control" />
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-md-3 col-sm-3 control-label">名称:</label>
+											<div class="col-md-7 col-sm-7">
+												<input type="text" class="form-control" />
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-md-3 col-sm-3 control-label">人数:</label>
+											<div class="col-md-7 col-sm-7">
+												<input type="number" class="form-control" />
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-md-3 col-sm-3 control-label">电话:</label>
+											<div class="col-md-7 col-sm-7">
+												<input type="tel" class="form-control" />
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-md-3 col-sm-3 control-label">生产日期:</label>
+											<div class="col-md-7 col-sm-7">
+												<input type="date" class="form-control" />
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-md-3 col-sm-3 control-label">保质期:</label>
+											<div class="col-md-7 col-sm-7">
+												<input type="date" class="form-control" />
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-md-3 col-sm-3 control-label">科室:</label>
+											<div class="col-md-7 col-sm-7">
+												<input type="text" class="form-control" />
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-md-3 col-sm-3 control-label">检修时间:</label>
+											<div class="col-md-7 col-sm-7">
+												<input type="date" class="form-control" />
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-md-3 col-sm-3 control-label">间隔检修时间:</label>
+											<div class="col-md-7 col-sm-7">
+												<input type="number" class="form-control" />
+											</div>
+										</div>
+										<div class="form-group" id="addbtn">
+											<input type="reset" class="btn btn-default" value="取消" data-dismiss="modal" />
+											<input type="submit" class="btn btn-primary" value="提交" />
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--新增模态框 end-->
+				</div>
+				<div id="selectArea" class="col-md-10 col-md-offset-1">
+					<form method="post" class="form-inline">
+						<div class="form-group hidden-xs">
+							<label>编号:</label>
+							<input type="text" class="form-control" />
+						</div>
+						<div class="form-group">
+							<label>名称:</label>
+							<input type="text" class="form-control" />
+						</div>
+						<div class="form-group hidden-xs">
+							<label>科室:</label>
+							<input type="text" class="form-control" />
+						</div>
+						<div class="form-group hidden-xs">
+							<label>检修时间:</label>
+							<input type="date" class="form-control" />
+						</div>
+						<div class="form-group">
+							<button type="submit" class="btn btn-default">查询</button>
+						</div>
+					</form>
+				</div>
+				<div id="deviceTable" class="col-md-10 col-md-offset-1 table-responsive">
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th>编号</th>
+								<th>设备名</th>
+								<th>生产商</th>
+								<th>图片</th>
+								<th>生产日期</th>
+								<th>保质期</th>
+								<th>科室</th>
+								<th>检修时间</th>
+								<th>间隔时间</th>
+								<th>操作</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="x in devices">
+								<td>{{x.id}}</td>
+								<td>{{x.name}}</td>
+								<td>{{x.provider}}</td>
+								<td>{{x.img}}</td>
+								<td>{{x.producedate}}</td>
+								<td>{{x.shelflife}}</td>
+								<td>{{x.office}}</td>
+								<td>{{x.repairtime}}</td>
+								<td>{{x.interval}}</td>
+								<td>
+									<a href=""><i class="glyphicon glyphicon-trash"></i></a>&nbsp;&nbsp;&nbsp;
+									<a href="" data-target="#updateModal" data-toggle="modal"><i class="glyphicon glyphicon-edit"></i></a>
+									<div class="modal fade" id="updateModal" tabindex="-1">
+										<div class="modal-dialog">
+											<div class="modal-content">
+												<div class="modal-header">
+													编辑设备信息
+												</div>
+												<div class="modal-body">
+													<form class="form-horizontal">
+														<div class="form-group">
+															<label class="col-md-3 col-sm-3 control-label">编号:</label>
+															<div class="col-md-7 col-sm-7">
+																<input type="text" class="form-control" />
+															</div>
+														</div>
+														<div class="form-group">
+															<label class="col-md-3 col-sm-3 control-label">设备名:</label>
+															<div class="col-md-7 col-sm-7">
+																<input type="text" class="form-control" />
+															</div>
+														</div>
+														<div class="form-group">
+															<label class="col-md-3 col-sm-3 control-label">生产商:</label>
+															<div class="col-md-7 col-sm-7">
+																<input type="text" class="form-control" />
+															</div>
+														</div>
+														<div class="form-group">
+															<label class="col-md-3 col-sm-3 control-label">图片:</label>
+															<div class="col-md-7 col-sm-7">
+																<input type="file" />
+															</div>
+														</div>
+														<div class="form-group">
+															<label class="col-md-3 col-sm-3 control-label">生产日期:</label>
+															<div class="col-md-7 col-sm-7">
+																<input type="date" class="form-control" />
+															</div>
+														</div>
+														<div class="form-group">
+															<label class="col-md-3 col-sm-3 control-label">保质期:</label>
+															<div class="col-md-7 col-sm-7">
+																<input type="date" class="form-control" />
+															</div>
+														</div>
+														<div class="form-group">
+															<label class="col-md-3 col-sm-3 control-label">科室:</label>
+															<div class="col-md-7 col-sm-7">
+																<input type="text" class="form-control" />
+															</div>
+														</div>
+														<div class="form-group">
+															<label class="col-md-3 col-sm-3 control-label">检修时间:</label>
+															<div class="col-md-7 col-sm-7">
+																<input type="date" class="form-control" />
+															</div>
+														</div>
+														<div class="form-group">
+															<label class="col-md-3 col-sm-3 control-label">间隔检修时间:</label>
+															<div class="col-md-7 col-sm-7">
+																<input type="number" class="form-control" />
+															</div>
+														</div>
+														<div class="form-group" id="addbtn">
+															<input type="reset" class="btn btn-default" value="取消" data-dismiss="modal" />
+															<input type="submit" class="btn btn-primary" value="提交" />
+														</div>
+													</form>
+												</div>
+											</div>
+										</div>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div id="pageArea" class="col-md-12 col-sm-12 col-xs-12">
+					<ul class="pagination">
+						<li><a href="">&laquo;</a></li>
+						<li ng-repeat="x in pages"><a href="">{{$index+1}}</a></li>
+						<li><a href="">&raquo;</a></li>
+					</ul>
+				</div>
+			</div>
+			<!--mainContent end-->
+		</div>
+	</div>
+	<!--footer start-->
+	<div manager_footer></div>
+	<!--footer end-->
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script>
+		setTimeout(function() {
+			var cur = $('header #ul li:eq(1)');
+			var resCur = $('#collapseOne ul li:eq(1)');
+			cur.addClass('active');
+			resCur.addClass('activeRes');
+		}, 200);
+	</script>
+</body>
+
+</html>

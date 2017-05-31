@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="userApp">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>首页</title>
+	<link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/managerLogoNav.css" />
+	<link rel="stylesheet" href="css/managerFooter.css" />
+	<link rel="stylesheet" href="css/index.css" />
+	<script src="js/angular.js"></script>
+	<script src="js/user.js"></script>
+</head>
+
+<body>
+	<!--loginNav start-->
+	<div manager_nav></div>
+	<!--loginNav end-->
+	<div class="container">
+		<div class="row">
+			<!--mainContent start-->
+			<div id="mainContent">
+				<div id="imgPlayer">
+					<!--轮播容器-->
+					<div id="left" class="col-md-12 col-sm-12 col-xs-12 carousel slide" data-ride="carousel">
+						<!--轮播指标-->
+						<ol class="carousel-indicators">
+							<li data-target="#left" data-slide-to="0" class="active"></li>
+							<li data-target="#left" data-slide-to="1"></li>
+							<li data-target="#left" data-slide-to="2"></li>
+							<li data-target="#left" data-slide-to="3"></li>
+						</ol>
+						<!--轮播项目-->
+						<div class="carousel-inner" id="carousel-items">
+							<div class="item active">
+								<img src="img/p1.png" />
+							</div>
+							<div class="item">
+								<img src="img/p2.png" />
+							</div>
+							<div class="item">
+								<img src="img/p3.png" />
+							</div>
+							<div class="item">
+								<img src="img/p4.png" />
+							</div>
+						</div>
+						<!--轮播导航-->
+						<a class="carousel-control left" href="#left" data-slide="prev">
+								&lsaquo;
+						</a>
+						<a class="carousel-control right" href="#left" data-slide="next">
+								&rsaquo;
+						</a>
+					</div>
+				</div>
+				<div id="deviceFunction">
+					<div id="import" class="col-md-4 col-sm-4 col-xs-12">
+						<div class="top">
+							<i class="glyphicon glyphicon-import"></i>
+						</div>
+						<div class="bottom">
+							导入设备<br/> Import Devices
+						</div>
+					</div>
+					<div id="export" class="col-md-4 col-sm-4 col-xs-12">
+						<div class="top">
+							<i class="glyphicon glyphicon-export"></i>
+						</div>
+						<div class="bottom">
+							导出设备<br/> Export Devices
+						</div>
+					</div>
+					<div id="number" class="col-md-4 col-sm-4 col-xs-12">
+						<div class="top">
+							<i class="glyphicon glyphicon-th-large"></i>
+						</div>
+						<div class="bottom">
+							设备数量<br/> Devices Numbers
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--mainContent end-->
+		</div>
+	</div>
+	<!--footer start-->
+	<div manager_footer></div>
+	<!--footer end-->
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script>
+		setTimeout(function() {
+			var cur = $('header #ul li:eq(0)');
+			var resCur = $('#collapseOne ul li:eq(0)');
+			cur.addClass('active');
+			resCur.addClass('activeRes');
+		}, 200);
+	</script>
+</body>
+
+</html>

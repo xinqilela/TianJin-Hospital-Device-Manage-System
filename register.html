@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="userApp">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>注册</title>
+	<link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/userLogoNav.css" />
+	<link rel="stylesheet" href="css/footer.css" />
+	<link rel="stylesheet" href="css/register.css" />
+	<link rel="stylesheet" href="css/unlock.css" />
+	<script src="js/angular.js"></script>
+	<script src="js/user.js"></script>
+</head>
+
+<body ng-controller="registController">
+	<!--loginNav start-->
+	<div user_nav></div>
+	<!--loginNav end-->
+	<!--mainContent start-->
+	<div id="mainContent">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 col-sm-12 col-xs-12" id="regisitForm">
+					<h1 class="text-center">欢迎注册</h1>
+					<form class="col-md-6 col-sm-6 col-xs-8 col-md-offset-3 col-sm-offset-3 col-xs-offset-2" name="registerForm" novalidate>
+						<!--userName start-->
+						<div class="form-group" id="userName">
+							<div class="input-group">
+								<span class="input-group-addon">
+									<i class="glyphicon glyphicon-user"></i>
+								</span>
+								<input type="text" class="form-control" placeholder="用户名" name="name" ng-model="register_name" ng-minlength="6" ng-maxlength="20" required/>
+							</div>
+							<div ng-show="registerForm.name.$dirty && registerForm.name.$invalid">
+								<span class="error" ng-show="registerForm.name.$error.required">
+									请输入用户名
+								</span>
+								<span class="error" ng-show="registerForm.name.$error.minlength">
+									用户名不能少于6个字符
+								</span>
+								<span class="error" ng-show="registerForm.name.$error.maxlength">
+									用户名不能多于20个字符
+								</span>
+							</div>
+						</div>
+						<!--userName end-->
+						<!--password start-->
+						<div class="form-group">
+							<div class="input-group">
+								<span class="input-group-addon">
+								<i class="glyphicon glyphicon-lock"></i>
+							</span>
+								<input type="password" class="form-control" placeholder="密码" name="password" ng-model="register_password" ng-minlength="6" ng-maxlength="20" required>
+							</div>
+							<div ng-show="registerForm.password.$dirty && registerForm.password.$invalid">
+								<span class="error" ng-show="registerForm.password.$error.required">
+									请输入密码
+								</span>
+								<span class="error" ng-show="registerForm.password.$error.minlength">
+									密码不能少于6个字符
+								</span>
+								<span class="error" ng-show="registerForm.password.$error.maxlength">
+									密码不能多于20个字符
+								</span>
+							</div>
+						</div>
+						<!--password end-->
+						<!--passwordAgain start-->
+						<div class="form-group">
+							<div class="input-group">
+								<span class="input-group-addon">
+								<i class="glyphicon glyphicon-lock"></i>
+							</span>
+								<input type="password" class="form-control" placeholder="请再次输入密码" name="repeatPassword" ng-model="register_Repassword" required>
+							</div>
+							<div ng-show="registerForm.repeatPassword.$valid">
+								<span class="error" ng-show="register_Repassword!==register_password">
+									两次输入的密码不一致
+								</span>
+							</div>
+						</div>
+						<!--passwordAgain end-->
+						<!--valid start-->
+						<div class="form-group">
+							<div id="valid" class="bar bar1">
+							</div>
+						</div>
+						<!--valid end-->
+						<div class="form-group">
+							<button type="button" class="btn btn-default col-md-12 col-sm-12 col-xs-12">注&nbsp;册</button>
+						</div>
+						<div id="goLogin" class="pull-right">
+							<i class="glyphicon glyphicon-hand-right"></i>
+							<a id="goLogin">已有账号，去登录</a>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--mainContent end-->
+	<!--footer start-->
+	<div footer></div>
+	<!--footer end-->
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/unlock.js"></script>
+	<script src="js/registerUI.js"></script>
+</body>
+
+</html>

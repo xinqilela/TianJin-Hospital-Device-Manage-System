@@ -1,0 +1,130 @@
+#mainContent {
+	width: 100%;
+	height: 480px;
+	background: #00A0E8;
+}
+
+#mainContent #loginContainer {
+	background: #fff;
+	width: 370px;
+	height: 380px;
+	border-radius: 8px;
+	margin-top: 50px;
+	position: relative;
+	color: #8A8A8A;
+}
+
+#loginContainer .form-group {
+	margin-bottom: 15px;
+}
+
+#loginContainer #checkRole {
+	position: absolute;
+	left: 0px;
+}
+
+#loginContainer #checkRole button {
+	padding: 13px;
+	color: #8A8A8A;
+	background: #fff;
+}
+
+#loginContainer #checkRole button.current,
+#loginContainer #checkRole button:hover {
+	color: #00A0E8;
+	background: #fff;
+	font-weight: bold;
+}
+
+#checkRole button#common {
+	width: 185px;
+	border-top-left-radius: 8px;
+	border-bottom-left-radius: 0px;
+	border-left: 0px;
+	border-top: 0px;
+	border-right: solid 1px lightgray;
+	border-bottom: solid 1px lightgray;
+}
+
+#checkRole button#special {
+	width: 185px;
+	float: right;
+	border-top-right-radius: 8px;
+	border-bottom-right-radius: 0px;
+	border-top: 0px;
+	border-right: 0px;
+	border-left: 0px;
+	border-bottom: solid 1px lightgray;
+}
+
+#loginContainer #loginMessage {
+	position: relative;
+	top: 75px;
+}
+
+#loginContainer #rememberPass {
+	margin-top: 12px;
+}
+
+#loginContainer #loginBtn {
+	height: 40px;
+	background: #00A0E8;
+	border: 1px solid #317EF3;
+	color: #fff;
+	font-size: 16px;
+}
+
+#loginContainer #loginBtn:hover {
+	background: #436EEE;
+}
+
+#loginContainer a {
+	color: #00A0E8;
+}
+
+#loginContainer a:hover {
+	color: #436EEE;
+}
+
+#loginContainer #rightHand {
+	color: #00A0E8;
+	font-weight: bold;
+}
+
+#loginContainer #regist {
+	position: relative;
+	top: 10px;
+}
+
+#loginContainer input {
+	height: 44px;
+}
+
+#loginContainer #valid {
+	position: relative;
+	left: -15px;
+}
+
+#loginContainer #validCode {
+	height: 44px;
+	line-height: 44px;
+	padding: 0px;
+}
+
+#loginContainer input[type="checkbox"] {
+	height: auto;
+}
+
+@media (max-width:768px) {
+	#mainContent #loginContainer {
+		width: 300px;
+		float: right;
+		margin-right: 10px;
+	}
+	#checkRole button#common {
+		width: 150px;
+	}
+	#checkRole button#special {
+		width: 150px;
+	}
+}

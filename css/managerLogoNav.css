@@ -1,0 +1,112 @@
+header {
+	height: 150px;
+}
+
+#logoNav {
+	width: 100%;
+	height: 100px;
+	line-height: 100px;
+	background: #fff;
+}
+
+#logoNav>div {
+	padding-left: 60px;
+}
+
+#logoNav>div>a>img {
+	width: 80px;
+	height: 80px;
+}
+
+#logoNav>div>img {
+	margin-left: 20px;
+}
+
+header #mainNav {
+	height: 50px;
+	line-height: 50px;
+	background: #015595;
+}
+
+#mainNav #responseWraper {
+	padding-top: 8px;
+}
+
+#responseWraper a i {
+	color: #FFFFF0;
+}
+
+#collapseOne {
+	position: absolute;
+	right: 0px;
+	top: 50px;
+	z-index: 200;
+	height: 201px;
+	width: 150px;
+}
+
+#collapseOne ul {
+	width: inherit;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	padding: 0px;
+	background: #F8F8F8;
+	border-radius: 2px;
+	border: 1px solid #E7E7E7;
+}
+
+#collapseOne ul li {
+	list-style: none;
+	margin-top: 0px;
+	height: 40px;
+	line-height: 40px;
+	text-align: left;
+	padding: 0px;
+	cursor: pointer;
+}
+
+#collapseOne ul li:hover,
+#collapseOne ul li.activeRes {
+	background: #E7E7E7;
+}
+
+#collapseOne ul li a {
+	margin-left: 40px;
+	font-size: 15px;
+	color: #000;
+}
+
+#ul li {
+	display: inline-block;
+	list-style: none;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+#ul li:hover,
+#ul li.active {
+	background: #004A83;
+}
+
+#ul li a {
+	color: #fff;
+	font-size: 16px;
+}
+
+#navright img {
+	background: yellow;
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	top: 10px;
+	left: -10px;
+	border-radius: 15px;
+	border: 1px solid #fff;
+}
+
+#mainNav #exit {
+	color: #fff;
+	font-size: 14px;
+	cursor: pointer;
+}

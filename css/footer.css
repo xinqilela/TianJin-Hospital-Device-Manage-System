@@ -1,0 +1,31 @@
+#bottomNav {
+	width: 100%;
+	height: 110px;
+	background: #fff;
+	text-align: center;
+}
+
+#bottomNav ul {
+	margin-top: 20px;
+}
+
+#bottomNav ul,
+#bottomNav li {
+	display: inline-block;
+	color: #666666;
+}
+
+#bottomNav li+li:before {
+	content: '|';
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+#bottomNav li a:hover {
+	color: #00A0E8;
+}
+
+#bottomNav div,
+#bottomNav li a {
+	color: #666666;
+}

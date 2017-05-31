@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="userApp">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>用户主界面</title>
+	<link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="bootstrap-datetimepicker-master/css/bootstrap-datetimepicker.min.css" />
+	<link rel="stylesheet" href="css/userLogoNav.css" />
+	<link rel="stylesheet" href="css/footer.css" />
+	<link rel="stylesheet" href="css/userinfo.css" />
+	<link rel="stylesheet" href="css/unlock.css" />
+	<script src="js/angular.js"></script>
+	<script src="js/user.js"></script>
+</head>
+
+<body ng-controller="registController">
+	<!--loginNav start-->
+	<div user_nav></div>
+	<!--loginNav end-->
+	<!--mainContent start-->
+	<div id="mainContent">
+		<div class="container">
+			<div class="row">
+				<form class="form-horizontal">
+					<div id="userTitle" class="col-md-10 col-sm-12 col-xs-12 col-md-offset-1">
+						<div id="userImage">
+							<img src="" />
+						</div>
+						<div id="titleCenter" class="col-md-3">
+							<div id="nameAndId">
+								<span id="userName">
+									yuanshanshan
+								</span>
+								<span id="userId" class="hidden-xs">y001</span>
+							</div>
+							<div id="userRole">角色：</div>
+							<div id="officeId">科室编号：</div>
+						</div>
+						<div id="titleRight" class="hidden-xs pull-right">
+							<input type="submit" value="提交" id="submitBtn" />
+							<a href="">查询所有设备</a>
+						</div>
+					</div>
+					<div id="userMessage" class="col-md-7 col-sm-12 col-xs-12  col-md-offset-1 ">
+						<ul id="myTab">
+							<li class="col-md-4 col-sm-4 col-xs-4 active current">
+								<a href="#myMessage" class="col-md-12 col-sm-12 " data-toggle="tab">登录信息</a>
+							</li>
+							<li class="col-md-4 col-sm-4 col-xs-4">
+								<a href="#communicateMessage" class="col-md-12 col-sm-12" data-toggle="tab">个人信息</a>
+							</li>
+							<li class="col-md-4 col-sm-4 col-xs-4">
+								<a href="#loginMessage" class="col-md-12 col-sm-12" data-toggle="tab">联系信息</a>
+							</li>
+						</ul>
+						<div id="myTabContent" class="tab-content">
+							<!--登录信息 start-->
+							<div class="tab-pane fade in active  col-md-12 col-sm-12 col-xs-12" id="myMessage">
+								<div id="myWrapper1">
+									<div class="form-group">
+										<label class="col-md-2 col-sm-2 col-xs-4 col-sm-offset-1 col-md-offset-1 control-label ">用户名:</label>
+										<div class="col-md-6 col-sm-6 col-xs-8 col-sm-offset-1">
+											<input type="text" class="form-control" />
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-md-2 col-sm-2 col-xs-4 col-sm-offset-1 col-md-offset-1 control-label">密码:</label>
+										<div class="col-md-6 col-sm-6 col-xs-8 col-sm-offset-1">
+											<input type="text" class="form-control" />
+										</div>
+									</div>
+								</div>
+							</div>
+							<!--登录信息 end-->
+							<!--个人信息 start-->
+							<div class="tab-pane fade  col-md-12 col-sm-12 col-xs-12" id="communicateMessage">
+								<div id="myWrapper2">
+									<div class="form-group">
+										<label class="col-md-2 col-md-offset-2 col-sm-2 col-sm-offset-1 col-xs-4 control-label">姓名:</label>
+										<div class="col-md-6 col-sm-6 col-xs-8 col-sm-offset-1">
+											<input type="text" class="form-control" />
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-md-2 col-md-offset-2 col-sm-2 col-sm-offset-1 col-xs-4 control-label">性别:</label>
+										<label class="checkbox-inline col-md-6 col-sm-6 col-xs-8 col-sm-offset-1">
+											<input type="radio" value=""/>男&nbsp;&nbsp;&nbsp;
+											<input type="radio" value=""/>女
+										</label>
+									</div>
+									<div class="form-group">
+										<label class="col-md-2 col-md-offset-2 col-sm-2 col-sm-offset-1 col-xs-4 control-label">生日:</label>
+										<div class="col-md-6 col-sm-6 col-xs-8 col-sm-offset-1">
+											<div class="input-group date form_date" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+												<input class="form-control" size="16" type="text" value="">
+												<span class="input-group-addon">
+													<span class="glyphicon glyphicon-remove"></span>
+												</span>
+												<span class="input-group-addon">
+													<span class="glyphicon glyphicon-calendar"></span>
+												</span>
+											</div>
+											<input type="hidden" id="dtp_input2" value="" /><br/>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-md-2 col-md-offset-2 col-sm-2 col-sm-offset-1 col-xs-4 control-label">头像:</label>
+										<div class="col-md-6 col-sm-6 col-xs-8 col-sm-offset-1">
+											<input type="file" />
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-md-2 col-md-offset-2 col-sm-2 col-sm-offset-1 col-xs-4 control-label">编号:</label>
+										<div class="col-md-6 col-sm-6 col-xs-8 col-sm-offset-1">
+											<input type="text" class="form-control" />
+										</div>
+									</div>
+								</div>
+							</div>
+							<!--个人信息 end-->
+							<!--联系信息 start-->
+							<div class="tab-pane fade  col-md-12 col-sm-12 col-xs-12" id="loginMessage">
+								<div id="myWrapper3">
+									<div class="form-group">
+										<label class="col-md-2 col-md-offset-2 col-sm-2 col-sm-offset-1 col-xs-4 control-label">电话:</label>
+										<div class="col-md-6 col-sm-6 col-xs-8 col-sm-offset-1">
+											<input type="tel" class="form-control" />
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-md-2 col-md-offset-2 col-sm-2 col-sm-offset-1 col-xs-4 control-label">邮箱:</label>
+										<div class="col-md-6 col-sm-6 col-xs-8 col-sm-offset-1">
+											<input type="email" class="form-control" />
+										</div>
+									</div>
+								</div>
+							</div>
+							<!--联系信息 end-->
+						</div>
+					</div>
+					<div id="submitResponse" class="col-md-3 hidden-sm hidden-xs">
+
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!--mainContent end-->
+	<!--footer start-->
+	<div footer></div>
+	<!--footer end-->
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="bootstrap-datetimepicker-master/js/bootstrap-datetimepicker.min.js"></script>
+	<script src="js/userinfo.js"></script>
+</body>
+
+</html>

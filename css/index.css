@@ -1,0 +1,128 @@
+body {
+	background: #E9E9E9;
+}
+
+#mainContent {
+	height: 650px;
+	background: #fff;
+}
+
+#mainContent #imgPlayer {
+	height: 410px;
+	position: relative;
+	top: 0px;
+}
+
+#mainContent #left {
+	height: inherit;
+	position: absolute;
+	top: 0px;
+}
+
+#left #myCarousel {
+	height: 410px;
+	background: red;
+}
+
+#left #carousel-items {
+	width: 100%;
+	height: inherit;
+	position: absolute;
+	left: 0;
+}
+
+#left img {
+	width: 100%;
+	height: 410px;
+}
+
+#left .left,
+#left .right {
+	height: 410px;
+	line-height: 410px;
+	text-align: center;
+}
+
+.left:hover,
+.right:hover {
+	font-size: 40px;
+}
+
+#mainContent #deviceFunction {
+	height: 250px;
+	background: #fff;
+	/*border-top: 1px solid #DCDCDC;*/
+}
+
+#deviceFunction .top {
+	width: 80px;
+	height: 80px;
+	line-height: 80px;
+	background: white;
+	border-radius: 40px;
+	margin: auto;
+	margin-top: 30px;
+	text-align: center;
+	color: #fff;
+	font-size: 20px;
+}
+
+.bottom {
+	width: 100px;
+	height: 40px;
+	margin: auto;
+	margin-top: 15px;
+	text-align: center;
+	font-size: 16px;
+}
+
+#deviceFunction #import {
+	height: 250px;
+	cursor: pointer;
+}
+
+#deviceFunction #import:hover {
+	background: #DCDCDC;
+}
+
+#import .top {
+	background: #FFC36B;
+}
+
+#deviceFunction #export {
+	height: 250px;
+	cursor: pointer;
+	border-left: 1px solid #DCDCDC;
+}
+
+#deviceFunction #export:hover {
+	background: #DCDCDC;
+}
+
+#export .top {
+	background: #57D3F9;
+}
+
+#deviceFunction #number {
+	height: 250px;
+	cursor: pointer;
+	border-left: 1px solid #DCDCDC;
+}
+
+#deviceFunction #number:hover {
+	background: #DCDCDC;
+}
+
+#number .top {
+	background: #FFA3BC;
+}
+
+@media (max-width:767px) {
+	#mainContent #deviceFunction {
+		height: 750px;
+	}
+	#deviceFunction #export {
+		border-top: 1px solid #DCDCDC;
+		border-bottom: 1px solid #DCDCDC;
+	}
+}

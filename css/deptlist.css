@@ -1,0 +1,150 @@
+body {
+	background: #E9E9E9;
+}
+
+#mainContent {
+	background: #fff;
+	height: 800px;
+	padding: 0px;
+}
+
+#insertwraper {
+	display: inline-block;
+	height: 80px;
+	line-height: 80px;
+	padding-left: 0px;
+}
+
+#insertwraper .form-group {
+	height: 60px;
+	line-height: 60px;
+	margin-top: 0px;
+}
+
+#insert {
+	border-radius: 13px;
+	width: 95px;
+	height: 30px;
+	line-height: 30px;
+	background: #4564A4;
+	border: 1px solid #015595;
+	color: #fff;
+	font-size: 14px;
+}
+
+#insert:hover {
+	background: #015595;
+	border: 1px solid #4564A4;
+}
+
+#addbtn {
+	text-align: center;
+}
+
+#addbtn button {
+	width: 80px;
+	margin-left: 10px;
+}
+
+#mainContent #selectArea {
+	background: #fff;
+	height: 80px;
+	line-height: 80px;
+	text-align: center;
+	margin-top: 0px;
+	padding: 0px;
+}
+
+#selectArea #selectForm {
+	height: 80px;
+	margin: 0px;
+	padding-left: 60px;
+}
+
+#selectForm input {
+	width: 170px;
+}
+
+#selectForm .form-group {
+	margin-left: 10px;
+	height: 80px;
+}
+
+#selectForm button {
+	margin-left: 10px;
+}
+
+#exportWraper {
+	color: #015595;
+}
+
+#modalTitle {
+	height: 50px;
+	line-height: 50px;
+	padding: 0px;
+	text-align: left;
+	padding-left: 30px;
+}
+
+#modalBtn1,
+#modalBtn2 {
+	background: red;
+}
+
+#mainContent #officeTable {
+	height: 560px;
+	border: 1px solid lightgray;
+	margin-top: 20px;
+}
+
+#officeTable table tr td {
+	text-align: center;
+	overflow: hidden;
+	text-align: justify;
+}
+
+#officeTable tbody a {
+	color: #333333;
+	font-size: 13px;
+}
+
+#mainContent #pageArea {
+	height: 90px;
+	text-align: center;
+	padding-top: 5px;
+	margin-top: 20px;
+}
+
+#pageArea li a {
+	width: 45px;
+	height: 40px;
+}
+
+@media (min-width: 768px) and (max-width:992px) {
+	#selectArea #selectForm {
+		padding-left: 0px;
+	}
+	#selectForm input {
+		width: 130px;
+	}
+}
+
+@media (max-width: 767px) {
+	#selectForm label {
+		width: 40px;
+		float: left;
+	}
+	#selectForm input {
+		width: 130px !important;
+		float: left;
+		margin-left: 20px;
+		margin-top: 23px;
+	}
+	#selectForm .form-group {
+		float: left;
+		margin-left: 10px;
+	}
+	#selectForm div:nth-child(2) {
+		margin-left: -40px;
+	}
+}

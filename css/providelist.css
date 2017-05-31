@@ -1,0 +1,141 @@
+body {
+	background: #E9E9E9;
+}
+
+#mainContent {
+	background: #fff;
+	height: 800px;
+	position: relative;
+}
+
+#insertwraper {
+	display: inline;
+}
+
+#insert {
+	border-radius: 13px;
+	width: 95px;
+	height: 30px;
+	background: #4564A4;
+	border: 1px solid #015595;
+	color: #fff;
+	margin-left: 15px;
+	font-size: 14px;
+}
+
+#insert:hover {
+	background: #015595;
+	border: 1px solid #4564A4;
+}
+
+#addbtn {
+	text-align: center;
+}
+
+#addbtn button {
+	width: 80px;
+	margin-left: 10px;
+}
+
+#mainContent #selectArea {
+	background: #fff;
+	height: 80px;
+	position: absolute;
+	top: 0px;
+	padding-top: 30px;
+	text-align: center;
+}
+
+#selectArea #selectform input[type=text] {
+	width: 150px;
+}
+
+#selectArea .form-group {
+	margin-left: 10px;
+}
+
+#selectArea button {
+	margin-left: 10px;
+}
+
+#selectArea #exportWraper {
+	margin-top: 5px;
+}
+
+#exportWraper i {
+	color: #015595;
+}
+
+#modalTitle {
+	text-align: left;
+}
+
+#modalBtn1,
+#modalBtn2 {
+	background: red;
+}
+
+#mainContent #providerTable {
+	height: 560px;
+	position: absolute;
+	border: 1px solid lightgray;
+	top: 100px;
+}
+
+#providerTable table tr td {
+	text-align: center;
+	overflow: hidden;
+	text-align: justify;
+}
+
+#providerTable tbody a {
+	color: #333333;
+	font-size: 13px;
+}
+
+#mainContent #pageArea {
+	height: 90px;
+	position: absolute;
+	bottom: 25px;
+	text-align: center;
+	padding-top: 5px;
+}
+
+#pageArea li a {
+	width: 45px;
+	height: 40px;
+}
+
+@media (min-width:768px) and (max-width:991px) {
+	#selectArea #selectform input[type=text] {
+		width: 110px;
+	}
+}
+
+@media (max-width:767px) {
+	#selectform {
+		position: absolute;
+		height: 100px;
+		line-height: 100px;
+		top: 0px;
+		left: 0px;
+	}
+	#selectform label {
+		float: left;
+		margin-left: 10px;
+	}
+	#selectform input {
+		float: left;
+		width: 100px;
+		margin-top: 34px;
+		margin-left: 10px;
+		width: 130px !important;
+	}
+	#selectform div:nth-child(2) {
+		float: left;
+		margin-left: -10px;
+	}
+	#selectform div:nth-child(3) {
+		float: left;
+	}
+}

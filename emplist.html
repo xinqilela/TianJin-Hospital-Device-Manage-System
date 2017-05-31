@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="userApp">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>用户管理</title>
+	<link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/managerLogoNav.css" />
+	<link rel="stylesheet" href="css/managerFooter.css" />
+	<link rel="stylesheet" href="css/emplist.css" />
+	<script src="js/angular.js"></script>
+	<script src="js/user.js"></script>
+</head>
+
+<body ng-controller="userControler">
+	<!--loginNav start-->
+	<div manager_nav></div>
+	<!--loginNav end-->
+	<div class="container">
+		<div class="row">
+			<!--mainContent start-->
+			<div id="mainContent">
+				<div id="selectArea" class="col-md-10 col-md-offset-1 col-sm-12 col-xs-12 ">
+					<form method="post" class="form-inline col-md-10 col-sm-10 col-xs-12" id="selectform">
+						<div class="form-group hidden-xs">
+							<label>编号:</label>
+							<input type="text" class="form-control" />
+						</div>
+						<div class="form-group">
+							<label>姓名:</label>
+							<input type="text" class="form-control" />
+						</div>
+						<div class="form-group hidden-xs">
+							<label>科室:</label>
+							<input type="text" class="form-control" />
+						</div>
+						<div class="form-group hidden-xs">
+							<label>性别:</label>
+							<input type="radio" />男&nbsp;&nbsp;
+							<input type="radio" />女
+						</div>
+						<div class="form-group">
+							<button type="submit" class="btn btn-default">查询</button>
+						</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					</form>
+					<div id="insertwraper" class="col-md-2 col-sm-2 hidden-xs">
+						<button id="insert" type="button" data-toggle="modal" data-target="#addModal">
+								<i class="glyphicon glyphicon-plus"></i>&nbsp;新增
+						</button>
+						<div id="exportWraper">
+							<i class="glyphicon glyphicon-export"></i>&nbsp;<a href="">导出员工</a>
+						</div>
+						<!--新增模态框 start-->
+						<div class="modal fade" id="addModal" tabindex="-1">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header" id="modalTitle">
+										增加员工信息
+									</div>
+									<div class="modal-body">
+										<form class="form-horizontal">
+											<div class="form-group">
+												<label class="col-md-3 col-md-offset-1 col-sm-3 control-label">编号:</label>
+												<div class="col-md-7 col-sm-7">
+													<input type="text" class="form-control" />
+												</div>
+											</div>
+											<div class="form-group">
+												<label class="col-md-3 col-md-offset-1 col-sm-3 control-label ">用户名:</label>
+												<div class="col-md-7 col-sm-7">
+													<input type="text" class="form-control" />
+												</div>
+											</div>
+											<div class="form-group">
+												<label class="col-md-3 col-md-offset-1 col-sm-3 control-label">密码:</label>
+												<div class="col-md-7 col-sm-7">
+													<input type="text" class="form-control" />
+												</div>
+											</div>
+											<div class="form-group">
+												<label class="col-md-3 col-md-offset-1 col-sm-3 control-label">姓名:</label>
+												<div class="col-md-7 col-sm-7">
+													<input type="text" class="form-control" />
+												</div>
+											</div>
+											<div class="form-group">
+												<label class="col-md-3 col-md-offset-1 col-sm-3 control-label">性别:</label>
+												<div class="col-md-2 col-sm-2">
+													<input type="radio" />男&nbsp;
+													<input type="radio" />女
+												</div>
+											</div>
+											<div class="form-group">
+												<label class="col-md-3 col-md-offset-1 col-sm-3 control-label">电话:</label>
+												<div class="col-md-7 col-sm-7">
+													<input type="tel" class="form-control" />
+												</div>
+											</div>
+											<div class="form-group">
+												<label class="col-md-3 col-md-offset-1 col-sm-3 control-label">邮箱:</label>
+												<div class="col-md-7 col-sm-7">
+													<input type="email" class="form-control" />
+												</div>
+											</div>
+											<div class="form-group">
+												<label class="col-md-3 col-md-offset-1 col-sm-3 control-label">生日:</label>
+												<div class="col-md-7 col-sm-7">
+													<input type="date" class="form-control" />
+												</div>
+											</div>
+											<div class="form-group">
+												<label class="col-md-3 col-md-offset-1 col-sm-3 control-label">头像:</label>
+												<div class="col-md-7 col-sm-7">
+													<input type="file" />
+												</div>
+											</div>
+											<div class="form-group">
+												<label class="col-md-3 col-md-offset-1 col-sm-3 control-label">科室编号:</label>
+												<div class="col-md-7 col-sm-7">
+													<input type="text" class="form-control" />
+												</div>
+											</div>
+											<div class="form-group">
+												<label class="col-md-3 col-md-offset-1 col-sm-3 control-label">角色:</label>
+												<div class="col-md-7 col-sm-7">
+													<input type="number" class="form-control" />
+												</div>
+											</div>
+											<div class="form-group" id="addbtn">
+												<button type="reset" class="btn btn-default" data-dismiss="modal">取消</button>
+												<button type="submit" class="btn btn-primary">提交</button>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--新增模态框 end-->
+					</div>
+				</div>
+				<div id="userTable" class="col-md-10 col-md-offset-1 col-sm-12 table-responsive">
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th>编号</th>
+								<th>用户名</th>
+								<th>密码</th>
+								<th>姓名</th>
+								<th>性别</th>
+								<th>电话</th>
+								<th>邮箱</th>
+								<th>生日</th>
+								<th>头像</th>
+								<th>科室编号</th>
+								<th>角色</th>
+								<th>操作</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="x in users">
+								<td>{{x.id}}</td>
+								<td>{{x.username}}</td>
+								<td>{{x.userpassword}}</td>
+								<td>{{x.name}}</td>
+								<td>{{x.sex}}</td>
+								<td>{{x.tel}}</td>
+								<td>{{x.email}}</td>
+								<td>{{x.birthday}}</td>
+								<td>{{x.img}}</td>
+								<td>{{x.officeid}}</td>
+								<td>{{x.role}}</td>
+								<td>
+									<a href=""><i class="glyphicon glyphicon-trash"></i></a>&nbsp;&nbsp;&nbsp;
+									<a href="" data-target="#updateModal" data-toggle="modal"><i class="glyphicon glyphicon-edit"></i></a>
+									<div class="modal fade" id="updateModal" tabindex="-1">
+										<div class="modal-dialog">
+											<div class="modal-content">
+												<div class="modal-header">
+													编辑员工信息
+												</div>
+												<div class="modal-body">
+													<form class="form-horizontal">
+														<div class="form-group">
+															<label class="col-md-3 col-md-offset-1 col-sm-3 control-label">编号:</label>
+															<div class="col-md-7 col-sm-7">
+																<input type="text" class="form-control" />
+															</div>
+														</div>
+														<div class="form-group">
+															<label class="col-md-3 col-md-offset-1 col-sm-3 control-label ">用户名:</label>
+															<div class="col-md-7 col-sm-7">
+																<input type="text" class="form-control" />
+															</div>
+														</div>
+														<div class="form-group">
+															<label class="col-md-3 col-md-offset-1 col-sm-3 control-label">密码:</label>
+															<div class="col-md-7 col-sm-7">
+																<input type="text" class="form-control" />
+															</div>
+														</div>
+														<div class="form-group">
+															<label class="col-md-3 col-md-offset-1 col-sm-3 control-label">姓名:</label>
+															<div class="col-md-7 col-sm-7">
+																<input type="text" class="form-control" />
+															</div>
+														</div>
+														<div class="form-group">
+															<label class="col-md-3 col-md-offset-1 col-sm-3 control-label">性别:</label>
+															<div class="col-md-7 col-sm-7">
+																<input type="radio" />男&nbsp;
+																<input type="radio" />女
+															</div>
+														</div>
+														<div class="form-group">
+															<label class="col-md-3 col-md-offset-1 col-sm-3 control-label">电话:</label>
+															<div class="col-md-7 col-sm-7">
+																<input type="tel" class="form-control" />
+															</div>
+														</div>
+														<div class="form-group">
+															<label class="col-md-3 col-md-offset-1 col-sm-3 control-label">邮箱:</label>
+															<div class="col-md-7 col-sm-7">
+																<input type="email" class="form-control" />
+															</div>
+														</div>
+														<div class="form-group">
+															<label class="col-md-3 col-md-offset-1 col-sm-3 control-label">生日:</label>
+															<div class="col-md-7 col-sm-7">
+																<input type="date" class="form-control" />
+															</div>
+														</div>
+														<div class="form-group">
+															<label class="col-md-3 col-md-offset-1 col-sm-3 control-label">头像:</label>
+															<div class="col-md-7 col-sm-7">
+																<input type="file" />
+															</div>
+														</div>
+														<div class="form-group">
+															<label class="col-md-3 col-md-offset-1 col-sm-3 control-label">科室编号:</label>
+															<div class="col-md-7 col-sm-7">
+																<input type="text" class="form-control" />
+															</div>
+														</div>
+														<div class="form-group">
+															<label class="col-md-3 col-md-offset-1 col-sm-3 control-label">角色:</label>
+															<div class="col-md-7 col-sm-7">
+																<input type="number" class="form-control" />
+															</div>
+														</div>
+														<div class="form-group" id="addbtn">
+															<button type="reset" class="btn btn-default" data-dismiss="modal">取消</button>
+															<button type="submit" class="btn btn-primary">提交</button>
+														</div>
+													</form>
+												</div>
+											</div>
+										</div>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div id="pageArea" class="col-md-12 col-sm-12 col-xs-12">
+					<ul class="pagination">
+						<li><a href="">&laquo;</a></li>
+						<li ng-repeat="x in pages"><a href="">{{$index+1}}</a></li>
+						<li><a href="">&raquo;</a></li>
+					</ul>
+				</div>
+			</div>
+			<!--mainContent end-->
+		</div>
+	</div>
+	<!--footer start-->
+	<div manager_footer></div>
+	<!--footer end-->
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script>
+		setTimeout(function() {
+			var cur = $('header #ul li:eq(2)');
+			var resCur = $('#collapseOne ul li:eq(2)');
+			cur.addClass('active');
+			resCur.addClass('activeRes');
+		}, 200);
+	</script>
+</body>
+
+</html>

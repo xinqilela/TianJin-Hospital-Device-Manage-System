@@ -1,0 +1,167 @@
+body {
+	background: #E9E9E9;
+}
+
+#mainContent {
+	background: #fff;
+	height: 800px;
+	position: relative;
+}
+
+#mainContent #optionArea {
+	position: absolute;
+	top: 0px;
+	height: 70px;
+}
+
+#mainContent #chart1 {
+	line-height: 70px;
+	position: absolute;
+	left: 60px;
+	padding-left: 45px;
+}
+
+#mainContent #chart2 {
+	line-height: 70px;
+	position: absolute;
+	left: 190px;
+	padding-left: 45px;
+}
+
+#optionArea button {
+	border-radius: 13px;
+	width: 95px;
+	height: 30px;
+	background: #4564A4;
+	border: 1px solid #015595;
+	color: #fff;
+	margin-top: 20px;
+	margin-left: 15px;
+	font-size: 14px;
+}
+
+#optionArea button:hover {
+	background: #015595;
+	border: 1px solid #4564A4;
+}
+
+#optionArea #export {
+	display: inline-block;
+}
+
+#addbtn {
+	text-align: center;
+}
+
+#addbtn input {
+	width: 80px;
+	margin-left: 10px;
+}
+
+#mainContent #selectArea {
+	height: 80px;
+	position: absolute;
+	top: 70px;
+	padding-top: 8px;
+	text-align: center;
+}
+
+#selectArea input {
+	width: 150px;
+}
+
+#selectArea .form-group {
+	margin-left: 10px;
+}
+
+#selectArea button {
+	margin-left: 10px;
+}
+
+#mainContent #deviceTable {
+	height: 560px;
+	position: absolute;
+	border: 1px solid lightgray;
+	top: 150px;
+}
+
+#deviceTable table tr td {
+	text-align: center;
+	overflow: hidden;
+	text-align: justify;
+}
+
+#deviceTable tbody a {
+	color: #333333;
+	font-size: 13px;
+}
+
+#mainContent #pageArea {
+	height: 90px;
+	position: absolute;
+	bottom: 0px;
+	text-align: center;
+	padding-top: 5px;
+}
+
+#pageArea li a {
+	width: 45px;
+	height: 40px;
+}
+
+
+/*小屏和中屏*/
+
+@media (min-width:768px) and (max-width:1200px) {
+	#mainContent {
+		height: 820px;
+	}
+	#mainContent #selectArea {
+		height: 100px;
+	}
+	#mainContent #selectArea form div:nth-child(4) {
+		margin-top: 10px;
+	}
+	#mainContent #selectArea button[type=submit] {
+		margin-top: 10px;
+	}
+	#mainContent #deviceTable {
+		margin-top: 20px;
+	}
+}
+
+
+/*超小屏*/
+
+@media (max-width:767px) {
+	#mainContent {
+		text-align: center;
+	}
+	#mainContent #chart1 {
+		left: 10px;
+		width: 140px;
+		padding-left: 15px;
+	}
+	#mainContent #chart2 {
+		left: 150px;
+		width: 140px;
+		padding-left: 0px;
+	}
+	#mainContent #selectArea {
+		width: 280px;
+		padding-left: 10px;
+	}
+	#selectArea label {
+		float: left;
+		margin-top: 5px;
+		margin-right: 15px;
+	}
+	#selectArea input {
+		width: 120px;
+		float: left;
+		margin-right: 10px;
+	}
+	#selectArea button[type=submit] {
+		float: left;
+	}
+}
