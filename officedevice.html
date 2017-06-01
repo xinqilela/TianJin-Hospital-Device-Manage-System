@@ -82,9 +82,9 @@
 				<!--设备信息 end-->
 				<div id="pageArea" class="col-md-12 col-sm-12 col-xs-12">
 					<ul class="pagination">
-						<li><a href="">&laquo;</a></li>
-						<li ng-repeat="x in pages"><a href="">{{$index+1}}</a></li>
-						<li><a href="">&raquo;</a></li>
+						<li><a href="" ng-click="previous()">&laquo;</a></li>
+						<li ng-repeat="page in pagesList"><a href="" ng-click="selectPage(page)">{{page}}</a></li>
+						<li><a href="" ng-click="next()">&raquo;</a></li>
 					</ul>
 				</div>
 			</div>

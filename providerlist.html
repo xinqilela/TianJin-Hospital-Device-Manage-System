@@ -129,32 +129,32 @@
 												<div class="modal-body">
 													<form class="form-horizontal">
 														<div class="form-group">
-															<label class="col-md-3 col-sm-3 col-md-offset-1 control-label">编号:</label>
-															<div class="col-md-7 col-sm-7">
+															<label class="col-md-3 col-sm-3 col-md-offset-1 col-xs-3 control-label">编号:</label>
+															<div class="col-md-7 col-sm-7 col-xs-7">
 																<input type="text" class="form-control" />
 															</div>
 														</div>
 														<div class="form-group">
-															<label class="col-md-3 col-sm-3 col-md-offset-1 control-label ">名称:</label>
-															<div class="col-md-7 col-sm-7">
+															<label class="col-md-3 col-sm-3 col-md-offset-1 col-xs-3 control-label ">名称:</label>
+															<div class="col-md-7 col-sm-7 col-xs-7">
 																<input type="text" class="form-control" />
 															</div>
 														</div>
 														<div class="form-group">
-															<label class="col-md-3 col-sm-3 col-md-offset-1 control-label">营业执照编号:</label>
-															<div class="col-md-7 col-sm-7">
+															<label class="col-md-3 col-sm-3 col-md-offset-1 col-xs-3 control-label">营业执照编号:</label>
+															<div class="col-md-7 col-sm-7 col-xs-7">
 																<input type="text" class="form-control" />
 															</div>
 														</div>
 														<div class="form-group">
-															<label class="col-md-3 col-sm-3 col-md-offset-1 control-label">经营许可证编号:</label>
-															<div class="col-md-7 col-sm-7">
+															<label class="col-md-3 col-sm-3 col-md-offset-1 col-xs-3 control-label">经营许可证编号:</label>
+															<div class="col-md-7 col-sm-7 col-xs-7">
 																<input type="text" class="form-control" />
 															</div>
 														</div>
 														<div class="form-group">
-															<label class="col-md-3 col-sm-3 col-md-offset-1 control-label">供应商资质图片:</label>
-															<div class="col-md-7 col-sm-7">
+															<label class="col-md-3 col-sm-3 col-md-offset-1 col-xs-3 control-label">供应商资质图片:</label>
+															<div class="col-md-7 col-sm-7 col-xs-7">
 																<input type="file" />
 															</div>
 														</div>
@@ -177,9 +177,9 @@
 				<!--页码 start-->
 				<div id="pageArea" class="col-md-12 col-sm-12">
 					<ul class="pagination">
-						<li><a href="">&laquo;</a></li>
-						<li ng-repeat="x in pages"><a href="">{{$index+1}}</a></li>
-						<li><a href="">&raquo;</a></li>
+						<li><a href="" ng-click="previous()">&laquo;</a></li>
+						<li ng-repeat="page in pagesList"><a href="" ng-click="selectPage(page)">{{page}}</a></li>
+						<li><a href="" ng-click="next()">&raquo;</a></li>
 					</ul>
 				</div>
 				<!--页码 end-->
@@ -199,6 +199,7 @@
 			cur.addClass('active');
 			resCur.addClass('activeRes');
 		}, 200);
+
 	</script>
 </body>
 

@@ -21,9 +21,9 @@
 		<div class="row">
 			<!--mainContent start-->
 			<div id="mainContent">
-				<div id="selectArea" class="col-md-12  col-sm-12 col-xs-12">
+				<div id="selectArea" class="col-md-12">
 					<!--条件查询开始-->
-					<form method="post" class="form-inline col-md-8 col-md-offset-1 col-sm-8 col-xs-12" id="selectForm">
+					<form method="post" class="form-inline col-md-7 col-md-offset-1 col-sm-8 col-xs-12" id="selectForm">
 						<div class="form-group hidden-xs">
 							<label>编号:</label>
 							<input type="text" class="form-control" />
@@ -49,37 +49,37 @@
 						<!--新增模态框 start-->
 						<div class="modal fade" id="addModal" tabindex="-1">
 							<div class="modal-dialog">
-								<div class="modal-content col-md-10 col-sm-10">
+								<div class="modal-content col-md-10 col-sm-12">
 									<div class="modal-header" id="modalTitle">
 										增加科室信息
 									</div>
 									<div class="modal-body">
-										<form class="form-inline">
+										<form class="form-horizontal">
 											<div class="form-group">
-												<label class="col-md-3 col-sm-4 control-label">编号:</label>
+												<label class="col-md-3 col-md-offset-1  col-sm-3  control-label">编号:</label>
 												<div class="col-md-7 col-sm-7">
 													<input type="text" class="form-control" />
 												</div>
 											</div>
 											<div class="form-group">
-												<label class="col-md-3 col-sm-4 control-label ">名称:</label>
+												<label class="col-md-3 col-md-offset-1 col-sm-3 control-label ">名称:</label>
 												<div class="col-md-7 col-sm-7">
 													<input type="text" class="form-control" />
 												</div>
 											</div>
 											<div class="form-group">
-												<label class="col-md-3 col-sm-4 control-label">人数:</label>
+												<label class="col-md-3 col-md-offset-1 col-sm-3 control-label">人数:</label>
 												<div class="col-md-7 col-sm-7">
 													<input type="number" class="form-control" />
 												</div>
 											</div>
 											<div class="form-group">
-												<label class="col-md-3 col-sm-4  control-label">电话:</label>
+												<label class="col-md-3 col-md-offset-1 col-sm-3 control-label">电话:</label>
 												<div class="col-md-7 col-sm-7">
 													<input type="tel" class="form-control" />
 												</div>
 											</div>
-											<div class="form-group col-md-offset-2 col-sm-offset-2" id="addbtn">
+											<div class="form-group" id="addbtn">
 												<button type="reset" class="btn btn-default" data-dismiss="modal">取消</button>
 												<button type="submit" class="btn btn-primary">提交</button>
 											</div>
@@ -91,7 +91,7 @@
 						<!--新增模态框 end-->
 					</div>
 				</div>
-				<div id="officeTable" class="col-md-10 col-md-offset-1 table-responsive">
+				<div id="officeTable" class="col-md-10 col-md-offset-1 col-sm-12 table-responsive">
 					<table class="table table-striped">
 						<thead>
 							<tr>
@@ -120,7 +120,7 @@
 												<div class="modal-body">
 													<form class="form-horizontal">
 														<div class="form-group">
-															<label class="col-md-3 col-md-offset-1  col-sm-3  control-label">编号:</label>
+															<label class="col-md-3 col-md-offset-1  col-sm-3 control-label">编号:</label>
 															<div class="col-md-7 col-sm-7">
 																<input type="text" class="form-control" />
 															</div>
@@ -157,11 +157,11 @@
 						</tbody>
 					</table>
 				</div>
-				<div id="pageArea" class="col-md-12">
+				<div id="pageArea" class="col-md-12 col-sm-12 col-xs-12">
 					<ul class="pagination">
-						<li><a href="">&laquo;</a></li>
-						<li ng-repeat="x in pages"><a href="">{{$index+1}}</a></li>
-						<li><a href="">&raquo;</a></li>
+						<li><a href="" ng-click="previous()">&laquo;</a></li>
+						<li ng-repeat="page in pagesList"><a href="" ng-click="selectPage(page)">{{page}}</a></li>
+						<li><a href="" ng-click="next()">&raquo;</a></li>
 					</ul>
 				</div>
 			</div>
@@ -180,6 +180,7 @@
 			cur.addClass('active');
 			resCur.addClass('activeRes');
 		}, 200);
+
 	</script>
 </body>
 

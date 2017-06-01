@@ -109,8 +109,16 @@ body {
 	height: 40px;
 }
 
+#mainContent #chart1 {
+	padding-left: 0px;
+}
 
-/*小屏和中屏*/
+#mainContent #chart2 {
+	padding-left: 0px;
+}
+
+
+/*小屏,中屏,大屏*/
 
 @media (min-width:768px) and (max-width:1200px) {
 	#mainContent {

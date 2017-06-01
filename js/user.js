@@ -161,11 +161,38 @@ userApp.controller("deviceControler", function ($scope) {
 		'interval': '1'
 					}];
 	//页数显示
-	var pagesNum = 6;
-	$scope.pages = [];
-	for (var i = 0; i < pagesNum; i++) {
-		$scope.pages.push(i);
+	$scope.pages = 20; //一共有20页数据
+	$scope.newPages = $scope.pages > 5 ? 5 : $scope.pages;
+	$scope.pagesList = [];
+	$scope.selPage = 1;
+	//分页要repeat的数组
+	for (var i = 0; i < $scope.newPages; i++) {
+		$scope.pagesList.push(i + 1);
 	}
+	//打印当前选中页的索引
+	$scope.selectPage = function (page) {
+
+		if (page < 1 || page > $scope.pages) return;
+		//最多显示分页数为5
+		if (page > 2) {
+			var newPageList = [];
+			for (var i = (page - 3); i < ((page + 2) > $scope.pages ? $scope.pages : (page + 2)); i++) {
+				newPageList.push(i + 1);
+			}
+			$scope.pagesList = newPageList;
+		}
+		$scope.selPage = page;
+		console.log("当前页：" + $scope.selPage);
+	};
+
+	//上一页
+	$scope.previous = function () {
+		$scope.selectPage($scope.selPage - 1);
+	};
+	//下一页
+	$scope.next = function () {
+		$scope.selectPage($scope.selPage + 1);
+	};
 });
 //科室管理页面数据
 userApp.controller('officeControler', function ($scope) {
@@ -241,11 +268,38 @@ userApp.controller('officeControler', function ($scope) {
 		'phone': '13132256511'
 					}];
 	//页数显示
-	var pagesNum = 6;
-	$scope.pages = [];
-	for (var i = 0; i < pagesNum; i++) {
-		$scope.pages.push(i);
+	$scope.pages = 20; //一共有20页数据
+	$scope.newPages = $scope.pages > 5 ? 5 : $scope.pages;
+	$scope.pagesList = [];
+	$scope.selPage = 1;
+	//分页要repeat的数组
+	for (var i = 0; i < $scope.newPages; i++) {
+		$scope.pagesList.push(i + 1);
 	}
+	//打印当前选中页的索引
+	$scope.selectPage = function (page) {
+
+		if (page < 1 || page > $scope.pages) return;
+		//最多显示分页数为5
+		if (page > 2) {
+			var newPageList = [];
+			for (var i = (page - 3); i < ((page + 2) > $scope.pages ? $scope.pages : (page + 2)); i++) {
+				newPageList.push(i + 1);
+			}
+			$scope.pagesList = newPageList;
+		}
+		$scope.selPage = page;
+		console.log("当前页：" + $scope.selPage);
+	};
+
+	//上一页
+	$scope.previous = function () {
+		$scope.selectPage($scope.selPage - 1);
+	};
+	//下一页
+	$scope.next = function () {
+		$scope.selectPage($scope.selPage + 1);
+	};
 });
 userApp.controller('userControler', function ($scope) {
 	$scope.users = [{
@@ -418,11 +472,38 @@ userApp.controller('userControler', function ($scope) {
 		'role': '1'
 					}];
 	//页数显示
-	var pagesNum = 6;
-	$scope.pages = [];
-	for (var i = 0; i < pagesNum; i++) {
-		$scope.pages.push(i);
+	$scope.pages = 20; //一共有20页数据
+	$scope.newPages = $scope.pages > 5 ? 5 : $scope.pages;
+	$scope.pagesList = [];
+	$scope.selPage = 1;
+	//分页要repeat的数组
+	for (var i = 0; i < $scope.newPages; i++) {
+		$scope.pagesList.push(i + 1);
 	}
+	//打印当前选中页的索引
+	$scope.selectPage = function (page) {
+
+		if (page < 1 || page > $scope.pages) return;
+		//最多显示分页数为5
+		if (page > 2) {
+			var newPageList = [];
+			for (var i = (page - 3); i < ((page + 2) > $scope.pages ? $scope.pages : (page + 2)); i++) {
+				newPageList.push(i + 1);
+			}
+			$scope.pagesList = newPageList;
+		}
+		$scope.selPage = page;
+		console.log("当前页：" + $scope.selPage);
+	};
+
+	//上一页
+	$scope.previous = function () {
+		$scope.selectPage($scope.selPage - 1);
+	};
+	//下一页
+	$scope.next = function () {
+		$scope.selectPage($scope.selPage + 1);
+	};
 });
 //供应商数据
 userApp.controller('providerControler', function ($scope) {
@@ -512,9 +593,36 @@ userApp.controller('providerControler', function ($scope) {
 		'img': 'img/p1.png'
 	}];
 	//页数显示
-	var pagesNum = 6;
-	$scope.pages = [];
-	for (var i = 0; i < pagesNum; i++) {
-		$scope.pages.push(i);
+	$scope.pages = 20; //一共有20页数据
+	$scope.newPages = $scope.pages > 5 ? 5 : $scope.pages;
+	$scope.pagesList = [];
+	$scope.selPage = 1;
+	//分页要repeat的数组
+	for (var i = 0; i < $scope.newPages; i++) {
+		$scope.pagesList.push(i + 1);
 	}
+	//打印当前选中页的索引
+	$scope.selectPage = function (page) {
+
+		if (page < 1 || page > $scope.pages) return;
+		//最多显示分页数为5
+		if (page > 2) {
+			var newPageList = [];
+			for (var i = (page - 3); i < ((page + 2) > $scope.pages ? $scope.pages : (page + 2)); i++) {
+				newPageList.push(i + 1);
+			}
+			$scope.pagesList = newPageList;
+		}
+		$scope.selPage = page;
+		console.log("当前页：" + $scope.selPage);
+	};
+
+	//上一页
+	$scope.previous = function () {
+		$scope.selectPage($scope.selPage - 1);
+	};
+	//下一页
+	$scope.next = function () {
+		$scope.selectPage($scope.selPage + 1);
+	};
 });

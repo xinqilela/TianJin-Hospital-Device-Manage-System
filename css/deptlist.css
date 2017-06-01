@@ -3,22 +3,42 @@ body {
 }
 
 #mainContent {
-	background: #fff;
 	height: 800px;
 	padding: 0px;
+	position: relative;
+	top: 0px;
+	background: #fff;
 }
 
-#insertwraper {
-	display: inline-block;
-	height: 80px;
-	line-height: 80px;
-	padding-left: 0px;
+#mainContent #selectArea {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	height: 100px;
 }
 
-#insertwraper .form-group {
-	height: 60px;
-	line-height: 60px;
-	margin-top: 0px;
+#selectArea>form {
+	height: 100px;
+	line-height: 100px;
+}
+
+#addModal form div:nth-child(5) {
+	padding-left: 60px;
+}
+
+#selectArea>form input {
+	width: 170px;
+}
+
+#selectArea>form button {
+	margin-top: -5px;
+	margin-left: 10px;
+}
+
+#selectArea #exportWraper {
+	height: 100px;
+	line-height: 100px;
+	color: #015595;
 }
 
 #insert {
@@ -30,6 +50,7 @@ body {
 	border: 1px solid #015595;
 	color: #fff;
 	font-size: 14px;
+	margin-top: 35px;
 }
 
 #insert:hover {
@@ -46,55 +67,11 @@ body {
 	margin-left: 10px;
 }
 
-#mainContent #selectArea {
-	background: #fff;
-	height: 80px;
-	line-height: 80px;
-	text-align: center;
-	margin-top: 0px;
-	padding: 0px;
-}
-
-#selectArea #selectForm {
-	height: 80px;
-	margin: 0px;
-	padding-left: 60px;
-}
-
-#selectForm input {
-	width: 170px;
-}
-
-#selectForm .form-group {
-	margin-left: 10px;
-	height: 80px;
-}
-
-#selectForm button {
-	margin-left: 10px;
-}
-
-#exportWraper {
-	color: #015595;
-}
-
-#modalTitle {
-	height: 50px;
-	line-height: 50px;
-	padding: 0px;
-	text-align: left;
-	padding-left: 30px;
-}
-
-#modalBtn1,
-#modalBtn2 {
-	background: red;
-}
-
 #mainContent #officeTable {
+	position: absolute;
+	top: 100px;
 	height: 560px;
 	border: 1px solid lightgray;
-	margin-top: 20px;
 }
 
 #officeTable table tr td {
@@ -111,8 +88,8 @@ body {
 #mainContent #pageArea {
 	height: 90px;
 	text-align: center;
-	padding-top: 5px;
-	margin-top: 20px;
+	position: absolute;
+	bottom: 20px;
 }
 
 #pageArea li a {
@@ -120,16 +97,37 @@ body {
 	height: 40px;
 }
 
-@media (min-width: 768px) and (max-width:992px) {
+@media (min-width:1200px) {
+	#selectForm input {
+		width: 170px !important;
+	}
+	#selectForm>.form-group {
+		margin-left: 10px;
+	}
+	#selectForm>.form-group>label {
+		margin-right: 10px;
+	}
+}
+
+@media (min-width: 768px) and (max-width:991px) {
 	#selectArea #selectForm {
 		padding-left: 0px;
 	}
+	#selectForm>.form-group {
+		margin-left: 10px;
+	}
+	#selectForm>.form-group>label {
+		margin-right: 10px;
+	}
 	#selectForm input {
-		width: 130px;
+		width: 130px !important;
 	}
 }
 
 @media (max-width: 767px) {
+	#selectForm {
+		margin-left: 0px;
+	}
 	#selectForm label {
 		width: 40px;
 		float: left;
@@ -137,14 +135,14 @@ body {
 	#selectForm input {
 		width: 130px !important;
 		float: left;
-		margin-left: 20px;
-		margin-top: 23px;
+		margin-left: 12px;
+		margin-top: 33px;
 	}
 	#selectForm .form-group {
 		float: left;
 		margin-left: 10px;
 	}
 	#selectForm div:nth-child(2) {
-		margin-left: -40px;
+		margin-left: -20px;
 	}
 }
