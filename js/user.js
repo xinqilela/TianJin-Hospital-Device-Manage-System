@@ -12,10 +12,10 @@ function myDirective(name, url) {
 		};
 	});
 }
-myDirective('userNav', 'userLogoNav.html');
-myDirective('managerNav', 'managerLogoNav.html');
-myDirective('footer', 'footer.html');
-myDirective('managerFooter', 'managerFooter.html');
+myDirective('userNav', 'view/userLogoNav.html');
+myDirective('managerNav', 'view/managerLogoNav.html');
+myDirective('footer', 'view/footer.html');
+myDirective('managerFooter', 'view/managerFooter.html');
 //设备页面数据
 userApp.controller("deviceControler", function ($scope) {
 	$scope.currentTime = new Date();

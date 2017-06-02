@@ -1,9 +1,18 @@
-//
+//设置导航区
+var char1Result, char2Result;
 setTimeout(function () {
 	var cur = $('header ul li:eq(1)');
 	cur.addClass('active');
+	//请求第一个图表的数据
+	$.get(url, data, function (response) {
+		char1Result = response;
+	});
+	//请求第二个图表的数据
+	$.get(url, data, function (response) {
+		char2Result = response;
+	});
 }, 200);
-//
+//创建图表
 var chart11;
 var chart22;
 if (chart11) {
@@ -16,7 +25,8 @@ chart11 = AmCharts.makeChart("chart1", {
 	type: "serial", //图表类型
 	theme: "light", //图表主题
 	//数据源
-	dataProvider: [{
+	dataProvider: char1Result
+		/*[{
 		"office": "设备科",
 		"numbers": 23,
 		"outRepair": 18
@@ -36,7 +46,8 @@ chart11 = AmCharts.makeChart("chart1", {
 		"office": "中医科",
 		"numbers": 24,
 		"outRepair": 20
-			}],
+			}]*/
+		,
 	//用于分类轴的值的字段的名称
 	categoryField: "office",
 	//动画的持续时间，以秒为单位
@@ -79,28 +90,30 @@ chart11 = AmCharts.makeChart("chart1", {
 chart22 = AmCharts.makeChart("chart2", {
 	type: "pie",
 	theme: 'light',
-	dataProvider: [{
-		"deviceName": "病床",
-		"medicalNumbers": 16
-				}, {
-		"deviceName": "氧气瓶",
-		"medicalNumbers": 18
-				}, {
-		"deviceName": "手术台",
-		"medicalNumbers": 20
-				}, {
-		"deviceName": "b超机",
-		"medicalNumbers": 30
-				}, {
-		"deviceName": "显微镜",
-		"medicalNumbers": 50
-				}, {
-		"deviceName": "心电图机",
-		"medicalNumbers": 10
-				}, {
-		"deviceName": "高压氧",
-		"medicalNumbers": 5
-				}],
+	dataProvider: char2Result
+		/*[{
+				"deviceName": "病床",
+				"medicalNumbers": 16
+						}, {
+				"deviceName": "氧气瓶",
+				"medicalNumbers": 18
+						}, {
+				"deviceName": "手术台",
+				"medicalNumbers": 20
+						}, {
+				"deviceName": "b超机",
+				"medicalNumbers": 30
+						}, {
+				"deviceName": "显微镜",
+				"medicalNumbers": 50
+						}, {
+				"deviceName": "心电图机",
+				"medicalNumbers": 10
+						}, {
+				"deviceName": "高压氧",
+				"medicalNumbers": 5
+						}]*/
+		,
 	//这场图的dataProvider持有切片的名称
 	titleField: "deviceName",
 	//

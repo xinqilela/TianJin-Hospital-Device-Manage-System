@@ -1,11 +1,12 @@
 $(function () {
 	$("#import").click(function () {
-		$.get(url, data);
+		//导入设备操作
 	});
 	$("#export").click(function () {
-		$.get(url, data);
+		//导出设备操作
 	});
 	$("#number").click(function () {
-		$.get(url, data);
+		//去往warningcharts.html
+		$.get();
 	});
 })();
