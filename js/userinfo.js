@@ -14,17 +14,19 @@ $('#userMessage li').click(function () {
 });
 
 $('#submitBtn').click(function () {
-	var con = $('#submitResponse');
-	if (con.children().length >= 1) {
-		$('p').remove();
-	}
-	var p = $('<p></p>');
-	p.text('表单提交成功！');
-	p.css({
-		color: '#FFA07A',
-		fontSize: 15,
-		textAlign: 'center',
-		marginTop: 310
+	$.post(url, data, function () {
+		var con = $('#submitResponse');
+		if (con.children().length >= 1) {
+			$('p').remove();
+		}
+		var p = $('<p></p>');
+		p.text('表单提交成功！');
+		p.css({
+			color: '#FFA07A',
+			fontSize: 15,
+			textAlign: 'center',
+			marginTop: 310
+		});
+		con.append(p);
 	});
-	con.append(p);
 });

@@ -22,6 +22,12 @@
 	left: 30px;
 }
 
+#userImage img {
+	width: inherit;
+	height: inherit;
+	border: 1px solid #0055A0;
+}
+
 #userTitle #titleCenter {
 	display: inline-block;
 	height: 110px;

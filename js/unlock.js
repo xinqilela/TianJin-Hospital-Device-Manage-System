@@ -34,6 +34,7 @@
 				});
 				div.append(i);
 				$('#valid').parent().append(div);
+				return true;
 			}
 		};
 		this.options = $.extend({}, this.default, options);

@@ -34,13 +34,13 @@
 								<input type="text" class="form-control" placeholder="用户名" name="name" ng-model="register_name" ng-minlength="6" ng-maxlength="20" required/>
 							</div>
 							<div ng-show="registerForm.name.$dirty && registerForm.name.$invalid">
-								<span class="error" ng-show="registerForm.name.$error.required">
+								<span class="error" ng-show="registerForm.name.$error.required" ng-cloak>
 									请输入用户名
 								</span>
-								<span class="error" ng-show="registerForm.name.$error.minlength">
+								<span class="error" ng-show="registerForm.name.$error.minlength" ng-cloak>
 									用户名不能少于6个字符
 								</span>
-								<span class="error" ng-show="registerForm.name.$error.maxlength">
+								<span class="error" ng-show="registerForm.name.$error.maxlength" ng-cloak>
 									用户名不能多于20个字符
 								</span>
 							</div>
@@ -55,13 +55,13 @@
 								<input type="password" class="form-control" placeholder="密码" name="password" ng-model="register_password" ng-minlength="6" ng-maxlength="20" required>
 							</div>
 							<div ng-show="registerForm.password.$dirty && registerForm.password.$invalid">
-								<span class="error" ng-show="registerForm.password.$error.required">
+								<span class="error" ng-show="registerForm.password.$error.required" ng-cloak>
 									请输入密码
 								</span>
-								<span class="error" ng-show="registerForm.password.$error.minlength">
+								<span class="error" ng-show="registerForm.password.$error.minlength" ng-cloak>
 									密码不能少于6个字符
 								</span>
-								<span class="error" ng-show="registerForm.password.$error.maxlength">
+								<span class="error" ng-show="registerForm.password.$error.maxlength" ng-cloak>
 									密码不能多于20个字符
 								</span>
 							</div>
@@ -76,7 +76,7 @@
 								<input type="password" class="form-control" placeholder="请再次输入密码" name="repeatPassword" ng-model="register_Repassword" required>
 							</div>
 							<div ng-show="registerForm.repeatPassword.$valid">
-								<span class="error" ng-show="register_Repassword!==register_password">
+								<span class="error" ng-show="register_Repassword!==register_password" ng-cloak>
 									两次输入的密码不一致
 								</span>
 							</div>
@@ -89,7 +89,7 @@
 						</div>
 						<!--valid end-->
 						<div class="form-group">
-							<button type="button" class="btn btn-default col-md-12 col-sm-12 col-xs-12">注&nbsp;册</button>
+							<button type="button" id="registBtn" class="btn btn-default col-md-12 col-sm-12 col-xs-12" ng-disabled="registerForm.name.$invalid || registerForm.password.$invalid || register_Repassword!==register_password">注&nbsp;册</button>
 						</div>
 						<div id="goLogin" class="pull-right">
 							<i class="glyphicon glyphicon-hand-right"></i>
@@ -107,7 +107,7 @@
 	<script src="js/jquery-3.2.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/unlock.js"></script>
-	<script src="js/registerUI.js"></script>
+	<script src="js/register.js"></script>
 </body>
 
 </html>
